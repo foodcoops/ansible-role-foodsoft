@@ -1,0 +1,19 @@
+### Managed by Ansible
+
+default: &defaults
+
+{% for key, value in foodsoft_config.items() %}
+  {{ key }}: {{ value }}
+{% endfor %}
+
+{% if foodsoft_config._multi_coop_install is defined and foodsoft_config_multi_coop_install %}
+{% for foodcoop in foodsoft_config_multi_coops %}
+{{ foodcoop.name }}:
+  <<: *defaults
+  database:
+    database: {{ foodcoop.database }}
+{% for key, value in foodsoft.config.items() %}
+  {{ key }}: {{ value }}
+{% endfor %}
+{% endfor %}
+{% endif %}

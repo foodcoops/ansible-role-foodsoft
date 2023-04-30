@@ -1,0 +1,24 @@
+---
+- name: "Packages | check facts"
+  ansible.builtin.package_facts:
+    manager: apt
+
+- name: "Packages | install packages"
+  ansible.builtin.apt:
+    pkg:
+      - default-libmysqlclient-dev
+      - libmagic-dev
+      - libxml2-dev
+      - libxslt-dev
+      - pkg-config
+      - rbenv
+      - redis
+      - yarnpkg
+
+# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=940511
+- name: "packages | Erstelle yarn-Symlink"
+  ansible.builtin.file:
+    src: /usr/bin/yarnpkg
+    dest: /usr/local/bin/yarn
+    state: link
+  when: "'cmdtest' not in ansible_facts.packages"
