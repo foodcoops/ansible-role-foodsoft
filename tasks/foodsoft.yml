@@ -89,15 +89,14 @@
   environment:
     RAILS_ENV: production
 
-- name: "Foodsoft | Copy default configuration"
-  ansible.builtin.copy:
-    src: "{{ foodsoft_home }}/config/app_config.yml.SAMPLE"
+- name: "Foodsoft | Copy Foodsoft configuration"
+  ansible.builtin.template:
+    src: foodsoft/app_config.yml.j2
     dest: "{{ foodsoft_home }}/config/app_config.yml"
-    remote_src: true
     owner: "{{ foodsoft_user }}"
     group: "{{ foodsoft_user }}"
     mode: "0600"
-    force: false
+  tags: foodsoft_app_config
 
 - name: "Foodsoft | Copy Active Storage configuration"
   ansible.builtin.copy:

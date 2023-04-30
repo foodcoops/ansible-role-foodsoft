@@ -6,6 +6,9 @@ default: &defaults
   {{ key }}: {{ value }}
 {% endfor %}
 
+production:
+  <<: *defaults
+
 {% if foodsoft_config._multi_coop_install is defined and foodsoft_config_multi_coop_install %}
 {% for foodcoop in foodsoft_config_multi_coops %}
 {{ foodcoop.name }}:
