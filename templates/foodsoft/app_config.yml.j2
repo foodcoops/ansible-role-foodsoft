@@ -6,6 +6,44 @@ default: &defaults
   {{ key }}: {{ value }}
 {% endfor %}
 
+{% if foodsoft_config_notification is defined %}
+  notification:
+{% for key, value in foodsoft_config_notification.items() %}
+    {{ key }}: {{ value }}
+{% endfor %}
+{% if foodsoft_config_notification_error_recipients is defined %}
+    error_recipients:
+{% for recipient in foodsoft_config_notification_error_recipients %}
+      - {{ recipient }}
+{% endfor %}
+{% endif %}
+{% if foodsoft_config_notification_feedback_recipients is defined %}
+    feedback_recipients:
+{% for recipient in foodsoft_config_notification_feedback_recipients %}
+      - {{ recipient }}
+{% endfor %}
+{% endif %}
+{% endif %}
+
+{% if foodsoft_config_contact is defined %}
+  contact:
+{% for key, value in foodsoft_config_contact.items() %}
+    {{ key }}: {{ value }}
+{% endfor %}
+{% endif %}
+
+{% if foodsoft_config_webstats_tracking_code is defined %}
+  webstats_tracking_code: |
+    {{ foodsoft_config_webstats_tracking_code }}
+{% endif %}
+
+{% if foodsoft_config_shared_lists is defined %}
+  shared_lists:
+{% for key, value in foodsoft_config_shared_lists.items() %}
+    {{ key }}: {{ value }}
+{% endfor %}
+{% endif %}
+
 production:
   <<: *defaults
 

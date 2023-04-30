@@ -84,6 +84,7 @@ from within the Foodsoft. Just use the following variables to grant the Foodsoft
 You can set all possible configuration settings from [app_config.yml.SAMPLE](https://github.com/foodcoops/foodsoft/blob/master/config/app_config.yml.SAMPLE) via your playbook. Some notes:
 - There are no configuration defaults. You have to set everything you want to configure by yourself.
 - If you need to quote a configuration setting use double quotes.
+- You can add every existing key-value-pair to `foodsoft_config` and `foodsoft_multi_coops_config`. Only the nested configuration settings shown in the example are supported.
 
 ```YAML
 ---
@@ -98,6 +99,35 @@ You can set all possible configuration settings from [app_config.yml.SAMPLE](htt
         homepage: https://foodcoops.net
         multi_coop_install: true
         default_scope: "'demo'"
+      foodsoft_config_notification:
+        sender_address: '"\"Foodsoft Error\" <noreply@example.org"'
+        email_prefix: '"[Foodsoft]"'
+      foodsoft_config_notification_error_recipients:
+        - notifications-foodsoft@example.org
+      foodsoft_config_notificatopn_feedback_recipients:
+        - support@example.org
+      foodsoft_config_contact:
+        street: Grüne Straße 103
+        zip_code: "10997"
+        city: Berlin
+        country: Deutschland
+        email: foodsoft@foodcoop.test
+        phone: '"030 123 45678"'
+      foodsoft_config_shared_lists:
+        adapter: mysql2
+        host: localhost
+        database: "{{ sharedlists.database }}"
+        username: "{{ foodsoft_db_user }}"
+        password: "{{ foodsoft_db_password }}"
+        encoding: utf8
+        socket: "{{ mariadb_socket }}"
+      foodsoft_config_webstats_tracking_code: |
+        <!-- Matomo -->
+          <script>
+            var _paq = window._paq = window._paq || [];
+            ...
+          </script>
+        <!-- End Matomo Code -->
       foodsoft_multi_coops_config:
         - name: demo
           database: foodsoft_demo
