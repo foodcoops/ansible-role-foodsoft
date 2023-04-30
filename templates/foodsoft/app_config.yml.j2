@@ -47,14 +47,16 @@ default: &defaults
 production:
   <<: *defaults
 
-{% if foodsoft_config_multi_coop_install is defined and foodsoft_config_multi_coop_install %}
-{% for foodcoop in foodsoft_config_multi_coops %}
+{% if foodsoft_config.multi_coop_install is defined and foodsoft_config.multi_coop_install %}
+{% for foodcoop in foodsoft_multi_coops %}
 {{ foodcoop.name }}:
   <<: *defaults
   database:
     database: {{ foodcoop.database }}
-{% for key, value in foodsoft.config.items() %}
+{% if foodcoop.config is defined %}
+{% for key, value in foodcoop.config.items() %}
   {{ key }}: {{ value }}
 {% endfor %}
+{% endif %}
 {% endfor %}
 {% endif %}

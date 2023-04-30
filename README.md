@@ -128,7 +128,7 @@ You can set all possible configuration settings from [app_config.yml.SAMPLE](htt
             ...
           </script>
         <!-- End Matomo Code -->
-      foodsoft_multi_coops_config:
+      foodsoft_multi_coops:
         - name: demo
           database: foodsoft_demo
           config:
@@ -139,7 +139,7 @@ You can set all possible configuration settings from [app_config.yml.SAMPLE](htt
           config:
             default_locale: de
             homepage: https://example.org
-        sharedlists:
-          enabled: true
-          database: sharedlists
+      sharedlists:
+        enabled: true
+        database: sharedlists
 ```
