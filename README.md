@@ -54,10 +54,10 @@ For outgoing mail delivery the Foodsoft needs to connect to an SMTP server.
 | `foodsoft_smtp_port` | `25` | Port of the SMTP server |
 | `foodsoft_smtp_authentication` | `false` | `True` if your SMTP server requires authentication |
 | `foodsoft_smtp_enable_starttls_auto` | `false` | `True` if your SMTP server only accepts TLS connections |
-| `foodsoft_smtp_user_name` | `nil` | SMTP user name |
-| `foodsoft_smtp_password` | `nil` | SMTP password |
-| `foodsoft_smtp_domain` | `nil` | Sender domain |
-| `foodsoft_smtp_openssl_verify_mode` | `nil` | Set for certificate verification |
+| `foodsoft_smtp_user_name` | | SMTP user name |
+| `foodsoft_smtp_password` | | SMTP password |
+| `foodsoft_smtp_domain` | | Sender domain |
+| `foodsoft_smtp_openssl_verify_mode` | | Set for certificate verification |
 
 ### Configuration for incomming mail processing
 
