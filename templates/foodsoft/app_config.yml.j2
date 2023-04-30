@@ -34,7 +34,7 @@ default: &defaults
 
 {% if foodsoft_config_webstats_tracking_code is defined %}
   webstats_tracking_code: |
-    {{ foodsoft_config_webstats_tracking_code }}
+    {{ foodsoft_config_webstats_tracking_code | indent( width=4 ) }}
 {% endif %}
 
 {% if foodsoft_config_shared_lists is defined %}
