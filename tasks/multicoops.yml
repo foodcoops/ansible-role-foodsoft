@@ -25,7 +25,7 @@
     chdir: "{{ foodsoft_home }}"
   environment:
     RAILS_ENV: production
-    REDIS_URL: redis://127.0.0.1:6379
+    REDIS_URL: "{{ foodsoft_redis_url }}"
     SECRET_KEY_BASE: "{{ foodsoft_secret_key_base }}"
     DATABASE_URL: mysql2://{{ foodsoft_db_user }}:{{ foodsoft_db_password }}@localhost/{{ item.database }}
   become: true
@@ -39,7 +39,7 @@
     chdir: "{{ foodsoft_home }}"
   environment:
     RAILS_ENV: production
-    REDIS_URL: redis://127.0.0.1:6379
+    REDIS_URL: "{{ foodsoft_redis_url }}"
     SECRET_KEY_BASE: "{{ foodsoft_secret_key_base }}"
     DATABASE_URL: mysql2://{{ foodsoft_db_user }}:{{ foodsoft_db_password }}@localhost/{{ item.database }}
   become: true
@@ -52,7 +52,7 @@
     chdir: "{{ foodsoft_home }}"
   environment:
     RAILS_ENV: production
-    REDIS_URL: redis://127.0.0.1:6379
+    REDIS_URL: "{{ foodsoft_redis_url }}"
     SECRET_KEY_BASE: "{{ foodsoft_secret_key_base }}"
     DATABASE_URL: mysql2://{{ foodsoft_db_user }}:{{ foodsoft_db_password }}@localhost/{{ item.database }}
   become: true

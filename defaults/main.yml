@@ -14,7 +14,7 @@ foodsoft_smtp_service: foodsoft-smtp.service
 foodsoft_resque_service: foodsoft-resque.service
 foodsoft_web_bind_ip: "127.0.0.1"
 foodsoft_web_port: "3001"
-foodsoft_redis_url: redis://127.0.0.1:6379
+foodsoft_redis_url: redis://127.0.0.1:6379/1
 foodsoft_version: master
 
 # Outgoing email delivery

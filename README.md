@@ -37,7 +37,7 @@ You can adapt the role to your needs via the following variables. Please note: I
 | `foodsoft_resque_service` | `foodsoft-resque.service` | Name of Foodsoft systemd [Resque](https://github.com/resque/resque) service |
 | `foodsoft_web_bind_ip` | `127.0.0.1` | Listen address for the internal Foodsoft application server |
 | `foodsoft_web_port` | `3001` | Liste port for the internal Foodsoft application server |
-| `foodsoft_redis_url` | `redis://127.0.0.1:6379` | Redis connection |
+| `foodsoft_redis_url` | `redis://127.0.0.1:6379/1` | URL to the Redis server, Uses the first Redis database |
 | `foodsoft_version` | `master` | Foodsoft version to install |
 | `ruby_build_version` | `master` | Ruby build version to install |
 | `ruby_path` | `{{ foodsoft_user_home }}/.rbenv` | Path to Ruby binaries |
