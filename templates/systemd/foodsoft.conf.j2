@@ -1,7 +1,7 @@
 ### Managed by Ansible
 
 BUNDLER_USER_HOME={{ foodsoft_user_home }}/.bundle
-RBENV_CMD="rbenv exec bundle exec"
+RBENV_CMD="rbenv exec bundle exec --keep-file-descriptors"
 RAILS_ENV=production
 RAILS_FORCE_SSL=false
 # It's not recommended to use more than one thread

@@ -5,7 +5,7 @@ Description=Foodsoft HTTP Server Accept Sockets
 Documentation=https://github.com/puma/puma/blob/master/docs/systemd.md
 
 [Socket]
-ListenStream={{ foodsoft_web_bind_ip }}:{{ puma_port }}
+ListenStream={{ foodsoft_web_bind_ip }}:{{ foodsoft_web_port }}
 
 # Socket options matching Puma defaults
 NoDelay=true

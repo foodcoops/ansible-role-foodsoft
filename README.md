@@ -41,7 +41,6 @@ You can adapt the role to your needs via the following variables. Please note: I
 | `foodsoft_version` | `master` | Foodsoft version to install |
 | `ruby_build_version` | `master` | Ruby build version to install |
 | `ruby_path` | `{{ foodsoft_user_home }}/.rbenv` | Path to Ruby binaries |
-| `puma_port` | `9294` | Listen port for the internal Foodsoft application server |
 | `mariadb_socket` | `/run/mysqld/mysqld.sock` | MariaDB connection socket |
 
 ### Configuration of mail delivery
