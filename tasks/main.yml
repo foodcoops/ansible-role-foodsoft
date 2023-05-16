@@ -37,8 +37,8 @@
 
 - name: Multicoops
   ansible.builtin.include_tasks: multicoops.yml
-  loop: "{{ foodsoft_multi_coops_config }}"
-  when: foodsoft_config._multi_coop_install is defined and foodsoft_config_multi_coop_install
+  loop: "{{ foodsoft_multi_coops }}"
+  when: foodsoft_config.multi_coop_install is defined and foodsoft_config.multi_coop_install
   args:
     apply:
       tags: multi_coop
