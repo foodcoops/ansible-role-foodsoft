@@ -6,7 +6,7 @@ It uses [rbenv](https://github.com/rbenv/rbenv) to install all necessary Ruby an
 
 A MariaDB server needs to be installed separately.
 
-All The Foodsoft components are started via Systemd services. Puma is used as an application server.
+All the Foodsoft components are started via Systemd services. Puma is used as an application server.
 [Socket activation](https://github.com/puma/puma/blob/master/docs/systemd.md) is enabled.
 
 - [Foodsoft](#foodsoft)
@@ -36,7 +36,7 @@ You can adapt the role to your needs via the following variables. Please note: I
 | `foodsoft_smtp_service` | `foodsoft-smtp.service` | Name of the Foodsoft systemd SMTP service |
 | `foodsoft_resque_service` | `foodsoft-resque.service` | Name of Foodsoft systemd [Resque](https://github.com/resque/resque) service |
 | `foodsoft_web_bind_ip` | `127.0.0.1` | Listen address for the internal Foodsoft application server |
-| `foodsoft_web_port` | `3001` | Liste port for the internal Foodsoft application server |
+| `foodsoft_web_port` | `3001` | Listen port for the internal Foodsoft application server |
 | `foodsoft_redis_url` | `redis://127.0.0.1:6379/1` | URL to the Redis server, Uses the first Redis database |
 | `foodsoft_version` | `master` | Foodsoft version to install |
 | `ruby_build_version` | `master` | Ruby build version to install |
