@@ -49,6 +49,7 @@ production:
 
 {% if foodsoft_config.multi_coop_install is defined and foodsoft_config.multi_coop_install %}
 {% for foodcoop in foodsoft_multi_coops %}
+{% if foodcoop.deleted is undefined or not foodcoop.deleted %}
 {{ foodcoop.name }}:
   <<: *defaults
   database:
@@ -57,6 +58,7 @@ production:
 {% for key, value in foodcoop.config.items() %}
   {{ key }}: {{ value }}
 {% endfor %}
+{% endif %}
 {% endif %}
 {% endfor %}
 {% endif %}
