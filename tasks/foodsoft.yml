@@ -97,6 +97,7 @@
     group: "{{ foodsoft_user }}"
     mode: "0600"
   tags: foodsoft_app_config
+  notify: restart foodsoft-web
 
 - name: "Foodsoft | Copy Active Storage configuration"
   ansible.builtin.copy:
