@@ -13,6 +13,7 @@
       - libmagic-dev
       - libxml2-dev
       - libxslt-dev
+      - moreutils
       - pkg-config
       - python3-pymysql
       - rbenv
