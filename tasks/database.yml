@@ -63,7 +63,7 @@
 
 - name: "Database | Run migrations"
   ansible.builtin.command:
-    cmd: "rbenv exec bundle exec rails multicoops:run TASK=db:migrate"
+    cmd: "rbenv exec bundle exec rails db:migrate"
     chdir: "{{ foodsoft_home }}"
   environment:
     RAILS_ENV: production
