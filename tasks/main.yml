@@ -27,10 +27,6 @@
   ansible.builtin.import_tasks: cron.yml
   tags: cron
 
-- name: Monitoring
-  ansible.builtin.import_tasks: monitoring.yml
-  tags: monitoring
-
 - name: Multicoops
   ansible.builtin.include_tasks: multicoops.yml
   loop: "{{ foodsoft_multi_coops }}"
