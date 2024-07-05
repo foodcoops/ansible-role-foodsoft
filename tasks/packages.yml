@@ -6,11 +6,15 @@
 - name: "Packages | install packages"
   ansible.builtin.apt:
     pkg:
+      - build-essential
       - default-libmysqlclient-dev
+      - git
+      - jq
       - libmagic-dev
       - libxml2-dev
       - libxslt-dev
       - pkg-config
+      - python3-pymysql
       - rbenv
       - redis
       - yarnpkg
