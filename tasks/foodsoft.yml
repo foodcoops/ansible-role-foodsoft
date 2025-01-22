@@ -98,8 +98,8 @@
     mode: "0600"
   tags: foodsoft_app_config
   notify:
-    - restart foodsoft-web
-    - restart foodsoft-resque
+    - Restart foodsoft-web
+    - Restart foodsoft-resque
 
 - name: "Foodsoft | Copy Active Storage configuration"
   ansible.builtin.copy:

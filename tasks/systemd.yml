@@ -10,10 +10,10 @@
     - { src: foodsoft-smtp.service.j2, dest: "{{ foodsoft_smtp_service }}" }
     - { src: foodsoft-resque.service.j2, dest: "{{ foodsoft_resque_service }}" }
   notify:
-    - restart foodsoft-web
-    - restart foodsoft-web-socket
-    - restart foodsoft-smtp
-    - restart foodsoft-resque
+    - Restart foodsoft-web
+    - Restart foodsoft-web-socket
+    - Restart foodsoft-smtp
+    - Restart foodsoft-resque
 
 - name: "Systemd | create configuration directory"
   ansible.builtin.file:
@@ -29,9 +29,9 @@
     group: root
     mode: "0640"
   notify:
-    - restart foodsoft-web
-    - restart foodsoft-smtp
-    - restart foodsoft-resque
+    - Restart foodsoft-web
+    - Restart foodsoft-smtp
+    - Restart foodsoft-resque
 
 - name: "Systemd | enable service"
   ansible.builtin.systemd:
