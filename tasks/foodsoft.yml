@@ -63,22 +63,18 @@
   become_user: "{{ foodsoft_user }}"
 
 # https://nokogiri.org/tutorials/installing_nokogiri.html#installing-using-standard-system-libraries
-- name: "Foodsoft | Configure nokogiri"
+- name: "Foodsoft | Set bundle options"
   ansible.builtin.command:
-    cmd: 'rbenv exec bundle config build.nokogiri "--use-system-libraries"'
+    cmd: "rbenv exec bundle config {{ item }}"
     chdir: "{{ foodsoft_home }}"
   become: true
   become_user: "{{ foodsoft_user }}"
   environment:
     RAILS_ENV: production
-
-- name: "Foodsoft | Set bundle options"
-  ansible.builtin.command:
-    cmd: "rbenv exec bundle config set --local without 'development test'"
-    chdir: "{{ foodsoft_home }}"
-    creates: "{{ foodsoft_home }}/.bundle/config"
-  become: true
-  become_user: "{{ foodsoft_user }}"
+  loop:
+    - build.nokogiri --use-system-libraries
+    - set --local without 'development test'
+    - set --local deployment true
 
 - name: "Foodsoft | Install ruby packages"
   ansible.builtin.command:
