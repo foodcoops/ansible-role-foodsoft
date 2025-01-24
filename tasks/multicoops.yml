@@ -34,7 +34,7 @@
   changed_when: false
 
 - name: "Multicoops | Create database schema | {{ item.name }}"
-  ansible.builtin.shell:  
+  ansible.builtin.command:
     cmd: "rbenv exec rails db:schema:load"
     chdir: "{{ foodsoft_home }}"
   environment:
@@ -47,7 +47,7 @@
   when: db_version.stdout == "0"
 
 - name: "Multicoops | Run seed.rb | {{ item.name }}"
-  ansible.builtin.shell:
+  ansible.builtin.command:
     cmd: "rbenv exec rails db:seed"
     chdir: "{{ foodsoft_home }}"
   environment:
